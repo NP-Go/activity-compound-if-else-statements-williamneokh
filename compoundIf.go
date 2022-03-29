@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	//Insert your code here
@@ -14,19 +17,24 @@ func main() {
 	}
 
 }
-func checkYear(year int) {
+func checkYear(year int) string {
 	if year%4 == 0 {
 		if year%100 != 0 {
 			fmt.Println(year, "is a leap year")
+			return strconv.Itoa(year) + " is a leap year"
 		} else if year%100 == 0 {
 			if year%400 == 0 {
 				fmt.Println(year, "is a leap year")
+				return strconv.Itoa(year) + " is a leap year"
 			} else {
 				fmt.Println(year, "is not a leap year")
+				return strconv.Itoa(year) + " is not a leap year"
 			}
 		}
 	} else {
 
 		fmt.Println(year, "is not a leap year")
+		return strconv.Itoa(year) + " is not a leap year"
 	}
+	return strconv.Itoa(year) + " is not a leap year"
 }
